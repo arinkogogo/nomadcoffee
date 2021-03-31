@@ -277,7 +277,13 @@ footer img {
 		grid-area: three;
 		justify-self: start;
 	}
+	.pagetop {
+		margin-right: 10rem;
+	}
 
+	.pagetop img {
+		width: 150px;
+	}
 	/* フッターここから */
 	.foot1 span {
 		font-size: 17px;
