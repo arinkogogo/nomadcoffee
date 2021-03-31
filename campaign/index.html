@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="campaign.css">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="佐世保市博物館島瀬美術センター内1階に店を構える珈琲屋「ノマドコーヒー」です。器と珈琲にこだわりあり。どなたでも気軽にご利用いただけるカフェです。">
+    <title>CAMPAIGN|美術館にある珈琲屋ノマドコーヒー</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+   
+    <script src="../js/jquery.inview.min.js"></script>
+    <link rel="icon" href="../images/favicon .ico">
+</head>
+
+<body>
+
+    <header>
+        <h1><a href="../index.html"><img src="../images/headerlogo.png" alt="美術館にある珈琲屋ノマドコーヒー"></a></h1>
+        <!-- スマホ用ハンバーガーメニュー部分 -->
+        <div class="drawer">
+
+            <!-- ハンバーガーメニューの表示・非表示を切り替えるチェックボックス -->
+            <input type="checkbox" id="drawer-check" class="drawer-hidden">
+
+            <!-- ハンバーガーアイコン -->
+            <label for="drawer-check" class="drawer-open"><span></span></label>
+
+            <!-- メニュー -->
+            <nav class="drawer-content">
+                <ul class="drawer-list">
+                    <li class="drawer-item">
+                        <a href="../index.html">HOME</a>
+                    </li><!-- /.drawer-item -->
+                    <li class="drawer-item">
+                        <a href="../index.html#concept">CONCEPT</a>
+                    </li><!-- /.drawer-item -->
+                    <li class="drawer-item">
+                        <a href="../index.html#news">NEWS</a>
+                    </li><!-- /.drawer-item -->
+                    <li class="drawer-item">
+                        <a href="../menu/index.html">MENU</a>
+                    </li><!-- /.drawer-item -->
+                    <li class="drawer-item">
+                        <a href="index.html">CAMPAIGN</a>
+                    </li><!-- /.drawer-item -->
+                    <li class="drawer-item">
+                        <a href="../aboutus/index.html">ABOUT US</a>
+                    </li><!-- /.drawer-item -->
+                </ul><!-- /.drawer-list -->
+            </nav>
+
+        </div>
+        <!-- パソコン用ナビ -->
+        <nav class="pc_nav">
+            <ul>
+                <li><a href="../index.html">HOME</a></li>
+                <li><a href="../index.html#concept">CONCEPT</a></li>
+                <li><a href="../index.html#news">NEWS</a></li>
+                <li><a href="../menu/index.html">MENU</a></li>
+                <li><a href="index.html">CAMPAIGN</a></li>
+                <li><a href="../aboutus/index.html">ABOUT US</a>
+                <li>
+                <li><a href="https://www.instagram.com/noma.dcoffee/" target="_blank"><img src="../images/insta_icon.png"
+                            alt=""></a></li>
+                <li><a href="https://www.facebook.com/nomad.coffee.2012/" target="_blank"><img
+                            src="../images/facebook_icon.png" alt=""></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="wrapper">
+            <h2>お得なわりびき</h2>
+            <div>
+                <dl class="inview_re fadeIn">
+                    <dt><img src="../images/campaign.png" alt="インスタ割"></dt>
+                    <div>
+                        <dd>インスタ割</dd>
+                        <dd>お会計時、画面をスタッフにお見せください。</dd>
+                    </div>
+                </dl>
+
+
+                <dl class="inview_re fadeIn">
+                    <dt><img src="../images/ticket.png" alt="珈琲チケット"></dt>
+                    <div>
+                        <dd>コーヒーチケット　2000円</dd>
+                        <dd>500円以下のドリンクが5杯飲めるお得なチケットです。<br>
+                            550円以上のドリンクは差額お支払いでご利用いただけます。<br>
+                            ※数量限定/インスタ割との併用不可</dd>
+                    </div>
+                </dl>
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="foot1">
+            <div><img src="../images/nomadlogo.png" alt=""></div>
+            <div>
+                <p><span>美術館にある珈琲屋ノマドコーヒー</span></p>
+                <p>〒857-0806 佐世保市島瀬町6番22号1階</p>
+                <p>営業時間/10：00～18：00 （17：30オーダーストップ）</p>
+                <p>定休日/火曜日（美術館開館日はオープン）</p>
+            </div>
+        </div>
+        <div class="foot2">
+            <p><small>copyright&copy;美術館にある珈琲屋ノマドコーヒー</small></p>
+    </footer>
+    </div>
+    </footer>
+
+</body>
+
+
+<script>
+    //  フェードイン 
+    $(function () {
+        $(".inview_re").on("inview", function (event, isInView) {
+            if (isInView) {
+                $(this).stop().addClass("is-show");
+            } else {
+                $(this).stop().removeClass("is-show");
+            }
+        });
+    });
+</script>
+
+</html>
