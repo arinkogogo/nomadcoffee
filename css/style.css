@@ -1,0 +1,340 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+/* トップページにふわっと浮き出るロゴ */
+.start {
+	background: #FFF;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 9000;
+}
+
+.start p {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	display: none;
+	z-index: 9999;
+	width: 280px;
+}
+
+.start img {
+	max-width: 80vw;
+}
+
+/* 共通 */
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+	position: relative;
+	font-size: 12px;
+	font-family: "ヒラギノ角ゴシック", "メイリオ", sans-serif;
+
+}
+
+/* ヘッダーここから */
+header {
+	background-color: #fff;
+	color: #000;
+	display: flex;
+	justify-content: space-between;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+}
+
+h1 img {
+	width: 230px;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+
+.pc_nav {
+	display: none;
+}
+
+nav a:link,
+nav a:visited {
+	color: #000;
+}
+
+nav a:hover {
+	border-bottom: 1px solid #000;
+	transition: 1s;
+}
+
+/* ハンバーガーメニューチェックボックスは非表示に */
+.drawer-hidden {
+	display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+	display: flex;
+	height: 60px;
+	width: 60px;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 100;
+	/* 重なり順を一番上に */
+	cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+	content: '';
+	display: block;
+	height: 3px;
+	width: 25px;
+	border-radius: 3px;
+	background: #333;
+	transition: 0.5s;
+	position: absolute;
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+.drawer-open span:before {
+	bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+	top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked~.drawer-open span {
+	background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked~.drawer-open span::before {
+	bottom: 0;
+	transform: rotate(45deg);
+}
+
+#drawer-check:checked~.drawer-open span::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.drawer-content {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 100%;
+	/* メニューを画面の外に飛ばす */
+	z-index: 99;
+	background: #fff;
+	transition: .5s;
+}
+
+.drawer-item {
+	margin: 2rem 1rem 1rem 3rem;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer-check:checked~.drawer-content {
+	left: 0;
+	/* メニューを画面に入れる */
+}
+
+.drawer-content .drawer-item a:checked {
+	display: none;
+}
+
+/* ハンバーガーメニューここまで↑ */
+/* メインここから */
+main {
+	margin-top: 75px;
+	position: relative;
+}
+
+.main_pic img {
+	width: 100%;
+}
+
+.catch {
+	position: absolute;
+	top: 0px;
+	left: 20px;
+	font-size: 45px;
+	font-weight: 900;
+	animation: SlideIn 7s;
+}
+
+@keyframes SlideIn {
+	30% {
+		opacity: 0;
+		transform: translate(64px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+.fadeIn {
+	opacity: 0;
+	transform: translate(0, -50%);
+	transition: 3s;
+}
+
+.fadeIn.is-show {
+	transform: translate(0, 0);
+	opacity: 1;
+}
+
+h2 {
+	margin: 1rem 0;
+	font-size: 20px;
+	border-bottom: 1px solid #fff;
+
+}
+
+section p {
+	line-height: 1.5rem;
+	margin: 1rem;
+	
+}
+
+section {
+	margin: 3rem 1rem 7rem 1rem;
+}
+
+.news_contents iframe {
+	display: block;
+	margin: 2rem auto;
+}
+
+.news_contents img {
+	display: block;
+	margin: 0 auto;
+}
+
+.news_contents div:first-child {
+	margin: 5rem auto;
+}
+
+.news_contents p {
+	text-align: center;
+}
+
+.news_contents a {
+	color: #fff;
+}
+
+/* フッターここから */
+
+.foot1 {
+	display: flex;
+	justify-content: center;
+	margin: 3rem 0 1rem;
+}
+
+.foot1 span {
+	font-size: 14px;
+	font-weight: 900;
+}
+
+footer img {
+	width: 80px;
+}
+
+.foot2 {
+	text-align: right;
+	font-size: small;
+}
+
+@media screen and (min-width:845px) {
+	body {
+		font-size: 14px;
+	}
+
+	/* トップページにふわっと浮き出るロゴ */
+	.start p {
+		left: 40%;
+		top: 50%;
+	}
+
+	.start img {
+		width: 30vw;
+	}
+
+	/* ヘッダー */
+	.drawer {
+		display: none;
+	}
+
+	.pc_nav {
+		display: block;
+	}
+
+	nav ul {
+		display: flex;
+	}
+
+	nav li {
+		margin: 40px 20px 0 10px;
+	}
+
+	nav img {
+		display: block;
+		margin-top: -10px;
+	}
+
+	nav img:last-child {
+		border-radius: 10px;
+	}
+
+	/* メインここから */
+	.catch {
+		font-size: 130px;
+	}
+
+	.main_pic img {
+		height: 90vh;
+		object-fit: cover;
+	}
+
+	h2 {
+		border-bottom: 3px solid #fff;
+	}
+
+	.wrapper {
+		max-width: 75%;
+		margin: 70px auto;
+	}
+
+	.news_contents {
+		display: flex;
+		justify-content: space-around;
+		margin-right: 15rem;
+	}
+}
