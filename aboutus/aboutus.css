@@ -1,0 +1,290 @@
+@charset "utf-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+}
+
+/* 共通 */
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	background-color: #000;
+	color: #fff;
+	position: relative;
+	font-size: 12px;
+	font-family: "ヒラギノ角ゴシック", "メイリオ", sans-serif;
+}
+
+.facebook_icon {
+	border-radius: 10px;
+}
+
+/* ヘッダーここから */
+header {
+	background-color: #fff;
+	color: #000;
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 5000;
+}
+
+h1 img {
+	width: 230px;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.pc_nav {
+	display: none;
+}
+
+nav a:link,
+nav a:visited {
+	color: #000;
+}
+
+nav a:hover {
+	border-bottom: 1px solid #000;
+	transition: 1s;
+}
+
+/* ハンバーガーメニューチェックボックスは非表示に */
+.drawer-hidden {
+	display: none;
+}
+
+/* ハンバーガーアイコンの設置スペース */
+.drawer-open {
+	display: flex;
+	height: 60px;
+	width: 60px;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	z-index: 100;
+	/* 重なり順を一番上に */
+	cursor: pointer;
+}
+
+/* ハンバーガーメニューのアイコン */
+.drawer-open span,
+.drawer-open span:before,
+.drawer-open span:after {
+	content: '';
+	display: block;
+	height: 3px;
+	width: 25px;
+	border-radius: 3px;
+	background: #333;
+	transition: 0.5s;
+	position: absolute;
+}
+
+/* 三本線のうち一番上の棒の位置調整 */
+.drawer-open span:before {
+	bottom: 8px;
+}
+
+/* 三本線のうち一番下の棒の位置調整 */
+.drawer-open span:after {
+	top: 8px;
+}
+
+/* アイコンがクリックされたら真ん中の線を透明にする */
+#drawer-check:checked~.drawer-open span {
+	background: rgba(255, 255, 255, 0);
+}
+
+/* アイコンがクリックされたらアイコンが×印になように上下の線を回転 */
+#drawer-check:checked~.drawer-open span::before {
+	bottom: 0;
+	transform: rotate(45deg);
+}
+
+#drawer-check:checked~.drawer-open span::after {
+	top: 0;
+	transform: rotate(-45deg);
+}
+
+/* メニューのデザイン*/
+.drawer-content {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 100%;
+	/* メニューを画面の外に飛ばす */
+	z-index: 99;
+	background: #fff;
+	transition: .5s;
+}
+
+.drawer-item {
+	margin: 2rem 1rem 1rem 3rem;
+}
+
+/* アイコンがクリックされたらメニューを表示 */
+#drawer-check:checked~.drawer-content {
+	left: 0;
+	/* メニューを画面に入れる */
+}
+
+
+/* ハンバーガーメニューここまで↑ */
+/* メインここから */
+main {
+	margin-top: 83px;
+}
+
+.fadeIn {
+	opacity: 0;
+	transform: translate(0, -35%);
+	transition: 3s;
+}
+
+.fadeIn.is-show {
+	transform: translate(0, 0);
+	opacity: 1;
+}
+
+h2 {
+	margin: 5rem auto 0;
+	padding-top: 4rem;
+	font-size: 20px;
+	border-bottom: 1px solid #fff;
+}
+
+h3 {
+	margin-bottom: 3rem;
+}
+
+section {
+	margin: 2rem 1rem;
+}
+
+.access img {
+	max-width: 100%;
+}
+
+.access iframe {
+	max-width: 70%;
+	display: block;
+	margin: 0 auto;
+}
+
+.access {
+	margin-bottom: 10rem;
+}
+
+.access a,
+h4 a {
+	color: #fff;
+}
+.pagetop {
+	text-align: right;
+	margin-right: 1rem;
+}
+
+.pagetop img {
+	width: 100px;
+}
+/* フッターここから */
+.foot1 {
+	display: flex;
+	justify-content: center;
+	margin: 3rem 0 1rem;
+}
+
+.foot1 span {
+	font-size: 14px;
+	font-weight: 900;
+}
+
+footer img {
+	width: 80px;
+}
+
+.foot2 {
+	text-align: right;
+	font-size: small;
+}
+
+@media screen and (min-width:845px) {
+	body {
+		font-size: 14px;
+	}
+
+	/* ヘッダー */
+	.drawer {
+		display: none;
+	}
+
+	.pc_nav {
+		display: block;
+	}
+
+	nav ul {
+		display: flex;
+	}
+
+	nav li {
+		margin: 40px 20px 0 10px;
+	}
+
+	nav img {
+		display: block;
+		margin-top: -10px;
+	}
+
+	/* メインここから */
+
+	.wrapper {
+		max-width: 70%;
+		margin: 83px auto 0;
+	}
+
+	.access {
+		display: grid;
+		grid-template-areas: "one four two"
+			"one four three";
+
+	}
+
+	.access div:first-child {
+		grid-area: one;
+		justify-self: center;
+	}
+
+	.access div:nth-child(2) {
+		grid-area: two;
+		/* align-self: center; */
+	}
+
+	.access div:last-child {
+		grid-area: three;
+		justify-self: start;
+	}
+
+	/* フッターここから */
+	.foot1 span {
+		font-size: 17px;
+		font-weight: 900;
+	}
+
+	footer img {
+		width: 100px;
+	}
+}
