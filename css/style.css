@@ -6,7 +6,9 @@
 	box-sizing: border-box;
 
 }
-
+html{
+	scroll-behavior: smooth;
+}
 /* トップページにふわっと浮き出るロゴ */
 .start {
 	background: #FFF;
