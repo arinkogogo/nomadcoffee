@@ -38,9 +38,9 @@ header {
 }
 
 h1 img {
-	height: 80px;
+	height: 75px;
 	margin-top: 5px;
-	margin-left: 10px;
+	margin-left: 5px;
 }
 
 .pc_nav {
@@ -267,6 +267,7 @@ footer img {
 	}
 
 	footer img {
-		width: 100px;
+		width: 120px;
+		padding:10px
 	}
 }
